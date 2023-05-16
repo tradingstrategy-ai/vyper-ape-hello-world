@@ -28,12 +28,11 @@ jobs:
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}          
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: |          
-            poetry install 
+        run: poetry install 
+      - name: Install Vyper plugin
+        run: poetry run ape plugins install vyper
       # Run compile as a separate step so we get nicer CI output
       - name: Compile Vyper
-        run: |
-          poetry run ape compile
+        run: poetry run ape compile
       - name: Run test scripts
-        run: |
-          poetry run ape test
+        run: poetry run ape test
