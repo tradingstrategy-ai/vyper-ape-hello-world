@@ -17,9 +17,7 @@ def deployer(accounts: List[TestAccount]) -> TestAccount:
 
 
 @pytest.fixture
-def hello_world_contract(
-    project: ProjectManager, deployer: TestAccount
-) -> ContractInstance:
+def hello_world_contract(project: ProjectManager, deployer: TestAccount) -> ContractInstance:
     """Deploy our Vyper contract on our unit testing EVM backend."""
     return deployer.deploy(project.HelloWorld)
 
