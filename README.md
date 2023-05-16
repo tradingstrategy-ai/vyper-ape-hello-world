@@ -13,7 +13,7 @@ The example covers
 - Installing tools
 - Compiling contracts
 - Running unit tests
-- [Github Actions-based continuous integration integration]()
+- [Github Actions-based continuous integration integration](./.github/workflows/test.yml)
 
 # Prerequisites
 
@@ -35,6 +35,7 @@ Then install `ape` and all Python packages using Poetry:
 cd project
 poetry shell
 poetry install
+ape plugins install vyper  # TODO: How to get rid of this step and automate it?
 ```
 
 # Usage
@@ -49,11 +50,84 @@ ape compile
 
 ## Run unit tests
 
-This will run the [pytest-based](https://pytest.org) test suite.
+This will run the [pytest-based](https://pytest.org) test suite after recompiling the contracts:
 
 ```shell
 ape test
 ```
+
+More verbose:
+
+```shell
+ape test --log-cli-level=info
+```
+
+### Adding breakpoints to tests
+
+The easiest way is with [ipdb console debugger based on Jupyter](https://pypi.org/project/ipdb/).
+
+Edit [test.py](./tests/test.py):
+
+```python
+def test_hello_world(hello_world_contract):
+    """We receive Hello World from the deployed contract accessor method"""
+    import ipdb ; ipdb.set_trace()
+    assert hello_world_contract.helloWorld() == "Hello Vyper!"
+
+```
+
+And run tests without stdin enabled:
+
+```shell
+ape test -s
+```
+
+You get interrupted at the breakpoint:
+
+```text
+tests/test_hello_world.py::test_hello_world SUCCESS: Contract 'HelloWorld' deployed to: 0x274b028b03A250cA03644E6c578D81f019eE1323
+> /Users/moo/code/ts/ape-vyper-hello-world/tests/test_hello_world.py(27)test_hello_world()
+     25     """We receive Hello World from the deployed contract accessor method"""
+     26     import ipdb ; ipdb.set_trace()
+---> 27     assert hello_world_contract.helloWorld() == "Hello Vyper!"
+
+ipdb> 
+```
+
+Now you can poke around:
+
+```
+ipdb> type(hello_world_contract)
+<class 'ape.contracts.base.ContractInstance'>
+```
+
+Or drop to ipython (gives better command line editor for typing Python):
+
+```
+ipdb> interact
+*interactive*
+In [1]: dir(hello_world_contract)
+Out[1]: 
+['address',
+ 'balance',
+ 'call_view_method',
+ 'code',
+ 'codesize',
+ 'contract_type',
+ 'decode_input',
+ 'get_event_by_signature',
+ 'helloWorld',
+ 'invoke_transaction',
+ 'is_contract',
+ 'nonce',
+ 'provider',
+ 'receipt',
+ 'txn_hash']
+
+In [5]: hello_world_contract.balance
+Out[5]: 0
+```
+
 
 ## Deploy
 

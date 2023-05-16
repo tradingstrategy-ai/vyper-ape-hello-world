@@ -10,4 +10,4 @@
 @external
 @view
 def helloWorld() -> String[24]:
-    return "Hello World!"
+    return "Hello Vyper!"
