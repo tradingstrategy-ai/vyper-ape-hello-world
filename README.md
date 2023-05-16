@@ -19,7 +19,7 @@ The example covers
 
 - [Python 3.10 installation](https://python.org)
 - [Poetry installed on Python](https://python-poetry.org/docs/#installation)
-- We recommend Visual Studio Code with [Vyper syntax highlighting](https://marketplace.visualstudio.com/items?itemName=tintinweb.vscode-vyper)
+- We recommend working in Visual Studio Code with [Vyper syntax highlighting plugin](https://marketplace.visualstudio.com/items?itemName=tintinweb.vscode-vyper)
 
 # Installation
 
@@ -128,7 +128,6 @@ In [5]: hello_world_contract.balance
 Out[5]: 0
 ```
 
-
 ## Deploy
 
 ```
@@ -137,7 +136,7 @@ Out[5]: 0
 
 # Learn more
 
-- [See Vyper resources](https://docs.vyperlang.org/en/latest/resources.html)
+- [Vyper resources](https://docs.vyperlang.org/en/latest/resources.html)
 - [The state of Python in blockchain ecosystem 2023 report](https://tradingstrategy.ai/blog/the-state-of-python-in-blockchain-in-2023)
 
 Brought you by [Trading Strategy](https://tradingstrategy.ai).
