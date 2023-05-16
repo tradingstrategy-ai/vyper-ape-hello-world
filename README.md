@@ -6,6 +6,7 @@ You probably want to run this tutorial if
 
 - You like Python
 - You like smart contracts
+- You love [EVM-blockhains](https://tradingstrategy.ai/glossary/evm-compatible)
 
 The example covers
 
@@ -39,17 +40,17 @@ poetry install
 
 ## Compile the contracts
 
-This will compile the contracts using Vyper plugin for Ape.
+This will compile the contracts using the Vyper plugin for Ape.
 
-```
+```shell
 ape compile
 ```
 
 ## Run unit tests
 
-This will run [pytest based]() test suite.
+This will run the [pytest-based](https://pytest.org) test suite.
 
-```
+```shell
 ape test
 ```
 
@@ -62,6 +63,7 @@ ape test
 # Learn more
 
 - [See Vyper resources](https://docs.vyperlang.org/en/latest/resources.html)
+- [The state of Python in blockchain ecosystem 2023 report](https://tradingstrategy.ai/blog/the-state-of-python-in-blockchain-in-2023)
 
 Brought you by [Trading Strategy](https://tradingstrategy.ai).
 For any questions and follow-ups:
@@ -72,5 +74,5 @@ For any questions and follow-ups:
 - [Telegram channel](https://t.me/trading_protocol)
 - [Newsletter](https://tradingstrategy.ai/newsletter)
 
-Please contract beforehand if opening issues/pull requests.
+Please kindly give heads up and contact via other channels before opening issues or pull requests.
 
