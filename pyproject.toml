@@ -5,7 +5,7 @@ description = "Hello World example for Vyper smart contracts"
 authors = ["Mikko Ohtamaa <mikko@opensourcehacker.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "usdc_payment_forwarder"}]
+packages = [{include = "helloworld"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
