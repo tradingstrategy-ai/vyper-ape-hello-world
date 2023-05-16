@@ -66,9 +66,10 @@ ape test --log-cli-level=info
 
 ### Adding breakpoints to tests
 
+So there is a bug and you want to debug it in Python...
 The easiest way is with [ipdb console debugger based on Jupyter](https://pypi.org/project/ipdb/).
 
-Edit [test.py](./tests/test.py):
+Edit [test.py](./tests/test.py) and drop in the breakpoint ([you might want to add this as Visual Studio Code Snippet](https://code.visualstudio.com/docs/editor/userdefinedsnippets)):
 
 ```python
 def test_hello_world(hello_world_contract):
