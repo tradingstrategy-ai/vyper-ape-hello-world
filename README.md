@@ -1,5 +1,7 @@
 # Vyper and ApeWorX Hello World Project
 
+[![Automated test suite](https://github.com/tradingstrategy-ai/vyper-ape-hello-world/actions/workflows/test.yml/badge.svg)](https://github.com/tradingstrategy-ai/vyper-ape-hello-world/actions/workflows/test.yml)
+
 Use this template to get started with [Vyper](https://vyperlang.org/) smart contract development using [ApeWorX](https://www.apeworx.io/) framework.
 
 You probably want to run this tutorial if 
