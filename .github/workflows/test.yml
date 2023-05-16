@@ -30,6 +30,10 @@ jobs:
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: |          
             poetry install 
+      # Run compile as a separate step so we get nicer CI output
+      - name: Compile Vyper
+        run: |
+          poetry run ape compile
       - name: Run test scripts
         run: |
           poetry run ape test
