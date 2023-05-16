@@ -13,6 +13,7 @@ The example covers
 - Installing tools
 - Compiling contracts
 - Running unit tests
+- [Github Actions-based continuous integration integration]()
 
 # Prerequisites
 
